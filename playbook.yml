@@ -1,0 +1,14 @@
+---
+- name: Simple Local Playbook
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  
+  tasks:
+    - name: Display a simple message
+      debug:
+        msg: "Hello from Ansible Tower! This playbook ran successfully at {{ ansible_date_time.iso8601 | default('now') }}"
+    
+    - name: Display system information
+      debug:
+        msg: "Running on controller: {{ inventory_hostname }}"
