@@ -10,7 +10,7 @@
   sources:
     - gitrgoliveira.vault_eda.vault_events:
         vault_addr: "{{ VAULT_ADDR }}"
-        vault_token: "{{ VAULT_TOKEN }}"
+        vault_token: "{{ VAULT_TOKEN | default('') }}"
         namespace: "{{ VAULT_NAMESPACE | default('admin') }}"
         verify_ssl: true
         ping_interval: 30
